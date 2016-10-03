@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="GBK">
+  <meta name="viewport" content="width=device-width,inital-scale=1.0,maximum-scale=1.0,user-scale=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="Author" content="salde" />
+  <meta name="Keywords" content="" />
+  <meta name="Description" content="" />
+  <title>网页标题</title>
+  <!-- css,js -->
+  <style>
+  body, html {
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+  </style>
+  <script src="sdalert.js"></script>
+ </head>
+ <body>
+ <script style="text/javascript">
+/*var model1 = new model({
+	title:"模态框标题",
+	content:"这是一条模态框的提示说明",
+  button:{
+    '确定':{
+      callback:function(){
+        model1.close(function(){
+          new model({
+            id:"aa",
+          });
+        });
+      }
+    }
+  }
+});*/
+// new model({id:"test"});
+new tips({
+  closed:function(){
+    new tips({
+      id:'tips-1',
+      icon:'success',
+      closed:function(){
+        new tips({
+          id:"warn",
+          icon:"warn",
+          closed:function(){
+            alert('全部展示完成了');
+          }
+        });
+      }
+    });
+  }
+});
+ </script>
+ </body>
+</html>

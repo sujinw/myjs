@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<title>原生js动画框架</title>
+<style>
+#div1{width:100px;height:100px;border:1px solid red;background:black;opacity:100;position:absolute;font-size:14px;color:#ff0}
+</style>
+<script src="animate.js"></script>
+</head>
+<body>
+<div id="div1">测试</div>
+<script>
+var animate = new animate("#div1",{
+	styles:{
+		//width:200,
+		//height:400,
+		left:200,
+		fontSize:'24px',
+		opacity:20
+		//background:"#ddd",
+	},
+	timeIn:1000,//几秒内开始动画
+	callback:function(ele,obj){
+		animate.next([
+			{
+			top:500
+		},{
+			left:0,
+			opacity:100
+		},{
+			top:0
+		},{
+			left:200,
+			top:100,
+		},{
+			width:200,
+			height:200,
+		},{
+			opacity:20
+		}
+		])
+	}
+});
+</script>
+</body>
+</html>
